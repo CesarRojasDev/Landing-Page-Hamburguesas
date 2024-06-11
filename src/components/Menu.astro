@@ -1,0 +1,79 @@
+---
+const MENU = [
+  {
+    name: 'Hamburguesa Simple',
+    price: 's/.6',
+    image: 'hamburguer-manzana.webp',
+    description: 'Hamburguesa simple con todas las cremas',
+  },
+  {
+    name: 'Hamburguesa Royal',
+    price: 's/.8',
+    image: 'hamburguer-pimienta.webp',
+    description: 'Hamburguesa con huevo frito y todas las cremas',
+  },
+  {
+    name: 'Hamburguesa con Queso',
+    price: 's/.10',
+    image: 'hamburguer-pepina.webp',
+    description: 'Hamburguesa con queso y todas las cremas',
+  },
+  {
+    name: 'Hamburguesa con Doble Carne',
+    price: 's/.12',
+    image: 'hamburguer-frijoles.webp',
+    description: 'Hamburguesa con 2 carnes y todas las cremas',
+  },
+  {
+    name: 'Hamburguesa con Chorizo',
+    price: 's/.14',
+    image: 'hamburguer-tomate.webp',
+    description: 'Hamburguesa con chorizo y todas las cremas',
+  },
+  {
+    name: 'Hamburguesa con Piña',
+    price: 's/.16',
+    image: 'hamburguer-manzana.webp',
+    description: 'Hamburguesa con piña y todas las cremas',
+  },
+]
+---
+
+<section
+  class='flex flex-col justify-center items-center py-[76px] px-[80px] bg-yellow-100'
+  id='menu'
+>
+  <div class='my-10 text-center'>
+    <h2 class='text-4xl font-bold text-amber-950'>Menú</h2>
+    <p class='text-xl font-bold mt-4 text-amber-950 '>
+      Conoce nuestras hamburguesas y <span class="text-yellow-500 font-bold">pide ahora!</span>
+    </p>
+  </div>
+  <div
+    class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center items-center gap-8'
+  >
+    {
+      MENU.map(({ name, price, image, description }) => (
+        <div class='flex flex-col justify-center items-center mt-8'>
+          <img
+            src='hero-hamburger.webp'
+            alt='hamburger'
+            class='w-[200px] hover:scale-110 transition ease-in-out'
+          />
+          <h3 class='text-2xl font-bold text-amber-950'>{name}</h3>
+          <p class='text-lg font-semibold text-amber-950 opacity-80 p-4'>
+            {description}
+          </p>
+          <span class='text-amber-950 text-2xl font-bold'>{price}</span>
+          <button class='bg-yellow-500 text-white text-bold rounded-lg w-full md:w-1/3  p-3 mt-4 hover:bg-yellow-600'>
+            <a
+              href={`https://wa.me/51986685016?text=Hola,%20quisiera%20pedirte%20una%20hamburguesa%20de%20${name}%20por%20favor.`}
+            >
+              Pedir
+            </a>
+          </button>
+        </div>
+      ))
+    }
+  </div>
+</section>
